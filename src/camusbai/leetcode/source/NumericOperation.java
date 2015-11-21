@@ -22,4 +22,13 @@ public class NumericOperation {
         }
         return x < 0 ? -rvse : rvse;
     }
+
+    /*
+    * #300
+    * */
+    public int lengthOfLIS(int[] nums) {
+        int LIS = 0;
+
+        return LIS;
+    }
 }
