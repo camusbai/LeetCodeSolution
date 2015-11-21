@@ -12,6 +12,9 @@ public class Main {
     String output = so.reverseWords(input);
     System.out.println(output);
 
+    String zigzag = "PAYPALISHIRING";
+    System.out.println(StringOperation.convert(zigzag, 14));
+
     ArrayOperation ao = new ArrayOperation();
     //Two Sum
     int[] numbers = {9, 7, 11, 8, 1};
@@ -36,6 +39,8 @@ public class Main {
     NumericOperation io = new NumericOperation();
     System.out.println(io.sqrt(8));
     System.out.println(quotient);
+    System.out.println("Reverse integer: "+NumericOperation.reverse(-2147483641));
+    System.out.println("Reverse integer: "+NumericOperation.reverse(2002));
 
     //matrix rotation
     int matrix[][] = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};

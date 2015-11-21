@@ -28,6 +28,21 @@ public class NumericOperation {
     return LIS;
   }
 
+    /*
+  * Reverse Integer
+  * */
+  public static int reverse(int x) {
+    int rvse = 0, bit=0;
+    while (x != 0) {
+        if(++bit==10)
+            if(rvse*10/10!=rvse)
+                return 0;
+            rvse = rvse * 10 + x % 10;
+            x /= 10;
+        }
+    return x < 0 ? -rvse : rvse;
+  }
+
   public static void main(String[] args) {
     int[] arr = new int[]{10, 12, 9, 2, 5, 3, 7, 101, 18,102};
     int[] arr1 = new int[]{0};
