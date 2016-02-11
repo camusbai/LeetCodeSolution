@@ -1,5 +1,9 @@
 package camusbai.leetcode.source;
 
+import camusbai.leetcode.source.ArrayOperation.*;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
   public static void main(String[] args) {
@@ -78,5 +82,17 @@ public class Main {
 
     System.out.println(to.maxDepth(n1));
     to.printAntiClockwise(n1,true,true);
+
+    List<Interval> intervals = new ArrayList<Interval>();
+    intervals.add(new Interval(1, 5));
+//    intervals.add(new Interval(3, 5));
+    intervals.add(new Interval(6, 8));
+//    intervals.add(new Interval(8, 10));
+//    intervals.add(new Interval(12, 16));
+
+    List<Interval> result1 = ao.insert(intervals, new Interval(5, 6));
+    System.out.println(result1);
+
+
   }
 }
