@@ -1,5 +1,7 @@
 package camusbai.leetcode.mathematic;
 
+import camusbai.leetcode.global.Solution;
+
 /**
  * Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai).
  * n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0).
@@ -14,10 +16,37 @@ public class Problem11_WaterContainer {
   }
 
   public static int maxArea(int[] height) {
-    if (height.length < 2)
-      return 0;
-    else
-      return getMaxArea(height, height.length);
+    Solution sol = Solution.BEST;
+    switch (sol) {
+      case MINE:
+        if (height.length < 2)
+          return 0;
+        else
+          return getMaxArea(height, height.length);
+      case BEST:
+        int left=0, right = height.length-1;
+        int leftH = height[0], rightH = height[height.length - 1];
+        int maxArea = Math.min(leftH, rightH) * (right - left);
+        while (left != right) {
+          if (leftH < rightH) {
+            int nextLeft = height[++left];
+            if (nextLeft > leftH) {
+              leftH = nextLeft;
+              maxArea = Math.max(maxArea, Math.min(leftH, rightH) * (right - left));
+            }
+          }
+          else{
+            int nextRight = height[--right];
+            if (nextRight > rightH) {
+              rightH = nextRight;
+              maxArea = Math.max(maxArea, Math.min(leftH, rightH) * (right - left));
+            }
+          }
+        }
+        return maxArea;
+      default:
+        return 0;
+    }
   }
 
   private static int getMaxArea(int[] height, int size) {
