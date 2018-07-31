@@ -6,6 +6,7 @@ package camusbai.leetcode.global;
 public enum Solution {
   MINE,
   BEST,
+  GOOD,
   BETTER,
   NAIVE;
 }
