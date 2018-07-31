@@ -1,18 +1,36 @@
-package camusbai.leetcode.array;
+package camusbai.leetcode.arraylist;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**Two Sum
- *Given an array of integers, find two numbers such that they add up to a specific target number
+ *Given an arraylist of integers, find two numbers such that they add up to a specific target number
  */
 public class Problem1_TwoSum {
     public static void main(String[] args) {
         int[] numbers = new int[]{2, 7, 11, 15};
-        int[] result = twoSum(numbers, 9);
+        int[] result = twoSum1(numbers, 9);
         System.out.println(result);
     }
 
-    public static int[] twoSum(int[] numbers, int target) {
+    public int[] twoSum(int[] nums, int target) {
+        int[] result = new int[2];
+        Map<Integer, Integer> visitedNum = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            int otherNum = target - nums[i];
+            if (visitedNum.containsKey(otherNum)) {
+                result[0] = visitedNum.get(otherNum);
+                result[1] = i;
+                break;
+            }
+            visitedNum.put(nums[i], i);
+        }
+        return result;
+    }
+
+    public static int[] twoSum1(int[] numbers, int target) {
         int[] temp = Arrays.copyOf(numbers, numbers.length);
         Arrays.sort(temp);
         int[] rslt = new int[2];

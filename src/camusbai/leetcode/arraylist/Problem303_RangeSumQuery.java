@@ -1,4 +1,4 @@
-package camusbai.leetcode.array;
+package camusbai.leetcode.arraylist;
 
 // Your NumArray object will be instantiated and called as such:
 // NumArray numArray = new NumArray(nums);

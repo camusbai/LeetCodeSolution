@@ -1,7 +1,7 @@
-package camusbai.leetcode.array;
+package camusbai.leetcode.arraylist;
 
 /**Remove Duplicates from Sorted Array
- * Given a sorted array, remove the duplicates in place such that each element appear only once
+ * Given a sorted arraylist, remove the duplicates in place such that each element appear only once
  * and return the new length
  */
 public class Problem26_RemoveDupSortedArray {

@@ -1,4 +1,4 @@
-package camusbai.leetcode.array;
+package camusbai.leetcode.arraylist;
 
 import camusbai.leetcode.util.Utils;
 
@@ -22,7 +22,7 @@ public class Problem4_MedianOfTwoArray {
         combined1 = nums1.length % 2 == 0;
         combined2 = nums2.length % 2 == 0;
 
-        // edge cases when some array is empty
+        // edge cases when some arraylist is empty
         if (nums1.length == 0 && nums2.length == 0)
             return 0;
         else if (nums1.length == 0)
@@ -30,7 +30,7 @@ public class Problem4_MedianOfTwoArray {
         else if (nums2.length == 0)
             return Utils.getMedian(nums1);
 
-        // finding median idx in combined array
+        // finding median idx in combined arraylist
         int medianIdx = Utils.getMidIndex(0, nums1.length + nums2.length - 1);
         int i = 0, j = 0;
         while (i + j + 1 <= medianIdx) {

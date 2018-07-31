@@ -1,4 +1,4 @@
-package camusbai.leetcode.array;
+package camusbai.leetcode.arraylist;
 
 import java.util.Arrays;
 
